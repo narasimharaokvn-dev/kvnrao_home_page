@@ -1,0 +1,9 @@
+html codes
+Explanation of Terms
+Angle Brackets (< and >): These characters enclose the name of an HTML tag.
+Tags: Tags are keywords that define how content should be formatted or what function a part of the document should perform. They usually come in pairs: an opening tag and a closing tag.
+Opening tag: Starts a section of content (e.g., <body> starts the main content area).
+Closing tag: Ends a section of content (e.g., </body> ends the main content area). The forward slash (/) indicates a closing tag.
+Element: An HTML element typically consists of the opening tag, the content inside it, and the closing tag (e.g., <p>This is a paragraph.</p> is a complete paragraph element).
+Attributes: Information added to the opening tag to provide more details about the element (e.g., <a href="url"> where href is the attribute). 
+These tags are fundamental to writing HTML code in any editor, from a basic text editor like Notepad to advanced Integrated Development Environments (IDEs) like Visual Studio Code. 

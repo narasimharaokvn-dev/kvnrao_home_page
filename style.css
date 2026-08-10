@@ -37,8 +37,9 @@ header p {
 }
 
 .hero-image-container img {
-    max-width: 40%; 
+    max-width: 90%; 
     height: auto;
+   <!-- border: 8px solid #F4C430; /* Gold border around the picture */-->
     border: 8px solid #F4C430; /* Gold border around the picture */
     border-radius: 5px; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
