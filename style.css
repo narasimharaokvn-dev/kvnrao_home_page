@@ -1,7 +1,7 @@
 /* --- 1. Global Styles & Typography --- */
 body {
-    background-color: #FEFBF3; /* Creamy White background */
-    color: #000000; /* Black text for main content */
+    background-color: #FEFBF3;
+    color: #000000;
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
@@ -10,8 +10,8 @@ body {
 
 /* --- 2. Header (Maroon & Gold Theme) --- */
 header {
-    background-color: #800000; /* Deep Maroon/Ceremonial Red */
-    color: #F4C430; /* Deep Gold text for the header */
+    background-color: #800000;
+    color: #F4C430;
     padding: 30px 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,38 +26,35 @@ header h1 {
 header p {
     margin-top: 5px;
     font-style: italic;
-    color: #FFD700; /* Brighter Gold accent */
+    color: #FFD700;
 }
 
 /* --- 3. Image Display Section --- */
 .hero-image-container {
     text-align: center;
-    padding: 40px 20px 20px; /* Reduced bottom padding */
-    background-color: #f7f3e8; 
+    padding: 40px 20px 20px;
+    background-color: #f7f3e8;
 }
 
 .hero-image-container img {
-    max-width: 90%; 
+    max-width: 90%;
     height: auto;
-   <!-- border: 8px solid #F4C430; /* Gold border around the picture */-->
-    border: 8px solid #F4C430; /* Gold border around the picture */
-    border-radius: 5px; 
+    border: 8px solid #F4C430;
+    border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 4. Centered Devotional Text Wrapper --- */
 .devotional-text-wrapper {
-    /* Centers all text inside this element */
-    text-align: center; 
-    padding: 20px 0 40px; /* Spacing below the text */
-    /* Limits the width of the text block and centers the block itself */
-    max-width: 800px; 
-    margin: 0 auto; 
+    text-align: center;
+    padding: 20px 0 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .accent-text {
     font-weight: bold;
-    color: #CD853F; /* Sandalwood Red/Brown accent */
+    color: #CD853F;
     margin-top: 20px;
 }
 
@@ -65,17 +62,16 @@ header p {
 .content-box {
     width: 80%;
     max-width: 900px;
-    margin: 0 auto 40px; /* Top margin removed, bottom margin added */
+    margin: 0 auto 40px;
     padding: 30px;
     background-color: #FFFFFF;
     border: 1px solid #e0d9c4;
     border-radius: 8px;
-    /* text-align is left (default) for easy reading in this section */
 }
 
 .content-box h2 {
-    color: #800000; /* Maroon for section headings */
-    border-bottom: 2px solid #F4C430; /* Gold underline */
+    color: #800000;
+    border-bottom: 2px solid #F4C430;
     padding-bottom: 10px;
 }
 
@@ -88,21 +84,4 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-.case-option {
-    text-align: center;
-    margin: 10px 0 20px;
-}
-
-.case-option button {
-    padding: 7px 14px;
-    margin: 0 4px;
-    border: 1px solid #999;
-    border-radius: 5px;
-    background: white;
-    cursor: pointer;
-}
-
-.case-option button:hover {
-    background: #f0f0f0;
 }
