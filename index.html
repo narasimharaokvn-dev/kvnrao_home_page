@@ -9,10 +9,13 @@
 <body>
 
     <header>
-        <h1>Welcome to KVNRAO.COM</h1>
+        <h1>Welcome to <span id="siteName">KVNRAO.COM</span></h1>
         <p>A place dedicated to devotion and service</p>
     </header>
-
+<div class="case-option">
+    <button onclick="setCase('upper')">UPPER CASE</button>
+    <button onclick="setCase('lower')">lower case</button>
+</div>
     <main>
         <div class="hero-image-container">
             <img src="images/venkateswara.jpg" alt="A divine picture of Lord Venkateswara Swamy">
@@ -31,8 +34,21 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 kvnrao.com. All Rights Reserved.</p>
+        <p>&copy; 2025 <span id="footerSiteName">kvnrao.com</span>. All Rights Reserved.</p>
     </footer>
+<script>
+function setCase(caseType) {
+    const siteName = document.getElementById("siteName");
+    const footerSiteName = document.getElementById("footerSiteName");
 
+    if (caseType === "upper") {
+        siteName.textContent = "KVNRAO.COM";
+        footerSiteName.textContent = "KVNRAO.COM";
+    } else {
+        siteName.textContent = "kvnrao.com";
+        footerSiteName.textContent = "kvnrao.com";
+    }
+}
+</script>
 </body>
 </html>

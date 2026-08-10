@@ -89,3 +89,20 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.case-option {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.case-option button {
+    padding: 7px 14px;
+    margin: 0 4px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.case-option button:hover {
+    background: #f0f0f0;
+}
