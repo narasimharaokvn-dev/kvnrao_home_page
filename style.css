@@ -75,7 +75,70 @@ header p {
     padding-bottom: 10px;
 }
 
-/* --- 6. Footer --- */
+/* --- 6. Cricket KVN Portal --- */
+.cricket-portal {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto 45px;
+    padding: 30px;
+    background: linear-gradient(135deg, #fff8df 0%, #ffffff 52%, #f2fff7 100%);
+    border: 1px solid #e5d29a;
+    border-left: 7px solid #0a8f45;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(128, 0, 0, 0.12);
+}
+
+.portal-kicker {
+    color: #0a8f45;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.cricket-portal h2 {
+    color: #800000;
+    margin: 0 0 10px;
+}
+
+.cricket-portal p {
+    margin: 0;
+}
+
+.portal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.portal-button {
+    border-radius: 999px;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 22px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portal-button:hover,
+.portal-button:focus {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+.public-link {
+    background-color: #0a8f45;
+    color: #ffffff;
+}
+
+.admin-link {
+    background-color: #800000;
+    color: #ffd966;
+}
+
+/* --- 7. Footer --- */
 footer {
     background-color: #333333;
     color: #FFFFFF;
@@ -84,4 +147,22 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 640px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .content-box,
+    .cricket-portal {
+        box-sizing: border-box;
+        width: calc(100% - 32px);
+        padding: 22px;
+    }
+
+    .portal-button {
+        text-align: center;
+        width: 100%;
+    }
 }
