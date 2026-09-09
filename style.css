@@ -42,6 +42,7 @@ header p {
 
 .portal-stack {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -189,13 +190,18 @@ footer {
         padding: 28px 16px;
     }
 
+    .portal-stack {
+        grid-template-columns: 1fr;
+    }
+
     .content-box {
         box-sizing: border-box;
         width: calc(100% - 32px);
         padding: 22px;
     }
 
-    .cricket-portal {
+    .cricket-portal,
+    .mafia-portal {
         box-sizing: border-box;
         width: 100%;
         padding: 22px;
