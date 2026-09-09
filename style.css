@@ -29,15 +29,22 @@ header p {
     color: #FFD700;
 }
 
-/* --- 3. Image Display Section --- */
+/* --- 3. Top Feature Section --- */
+.top-feature {
+    align-items: center;
+    background-color: #f7f3e8;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr);
+    padding: 42px 7%;
+}
+
 .hero-image-container {
     text-align: center;
-    padding: 40px 20px 20px;
-    background-color: #f7f3e8;
 }
 
 .hero-image-container img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border: 8px solid #F4C430;
     border-radius: 5px;
@@ -77,9 +84,9 @@ header p {
 
 /* --- 6. Cricket KVN Portal --- */
 .cricket-portal {
-    width: 80%;
-    max-width: 900px;
-    margin: 0 auto 45px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
     padding: 30px;
     background: linear-gradient(135deg, #fff8df 0%, #ffffff 52%, #f2fff7 100%);
     border: 1px solid #e5d29a;
@@ -154,10 +161,20 @@ footer {
         font-size: 1.8em;
     }
 
-    .content-box,
-    .cricket-portal {
+    .top-feature {
+        grid-template-columns: 1fr;
+        padding: 28px 16px;
+    }
+
+    .content-box {
         box-sizing: border-box;
         width: calc(100% - 32px);
+        padding: 22px;
+    }
+
+    .cricket-portal {
+        box-sizing: border-box;
+        width: 100%;
         padding: 22px;
     }
 
