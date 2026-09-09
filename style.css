@@ -35,9 +35,14 @@ header p {
     background-color: #f7f3e8;
     display: grid;
     gap: 28px;
-    grid-template-columns: 300px minmax(420px, 760px);
+    grid-template-columns: minmax(300px, 380px) minmax(420px, 760px);
     justify-content: center;
     padding: 34px 6%;
+}
+
+.portal-stack {
+    display: grid;
+    gap: 18px;
 }
 
 .hero-image-container {
@@ -83,8 +88,9 @@ header p {
     padding-bottom: 10px;
 }
 
-/* --- 6. Cricket KVN Portal --- */
-.cricket-portal {
+/* --- 6. App Portal Cards --- */
+.cricket-portal,
+.mafia-portal {
     align-self: start;
     box-sizing: border-box;
     width: 100%;
@@ -97,6 +103,12 @@ header p {
     box-shadow: 0 12px 28px rgba(128, 0, 0, 0.12);
 }
 
+.mafia-portal {
+    background: linear-gradient(135deg, #effff5 0%, #ffffff 56%, #fff8df 100%);
+    border-color: #acd9be;
+    border-left-color: #00b050;
+}
+
 .portal-kicker {
     color: #0a8f45;
     font-size: 0.78em;
@@ -106,13 +118,15 @@ header p {
     text-transform: uppercase;
 }
 
-.cricket-portal h2 {
+.cricket-portal h2,
+.mafia-portal h2 {
     color: #800000;
     font-size: 1.55em;
     margin: 0 0 10px;
 }
 
-.cricket-portal p {
+.cricket-portal p,
+.mafia-portal p {
     font-size: 0.98em;
     margin: 0;
 }
@@ -141,6 +155,11 @@ header p {
 
 .public-link {
     background-color: #0a8f45;
+    color: #ffffff;
+}
+
+.mafia-link {
+    background-color: #00b050;
     color: #ffffff;
 }
 
