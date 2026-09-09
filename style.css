@@ -34,9 +34,10 @@ header p {
     align-items: center;
     background-color: #f7f3e8;
     display: grid;
-    gap: 32px;
-    grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr);
-    padding: 42px 7%;
+    gap: 28px;
+    grid-template-columns: 300px minmax(420px, 760px);
+    justify-content: center;
+    padding: 34px 6%;
 }
 
 .hero-image-container {
@@ -84,10 +85,11 @@ header p {
 
 /* --- 6. Cricket KVN Portal --- */
 .cricket-portal {
+    align-self: start;
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: 30px;
+    padding: 22px;
     background: linear-gradient(135deg, #fff8df 0%, #ffffff 52%, #f2fff7 100%);
     border: 1px solid #e5d29a;
     border-left: 7px solid #0a8f45;
@@ -97,34 +99,36 @@ header p {
 
 .portal-kicker {
     color: #0a8f45;
-    font-size: 0.85em;
+    font-size: 0.78em;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin: 0 0 8px;
     text-transform: uppercase;
 }
 
 .cricket-portal h2 {
     color: #800000;
+    font-size: 1.55em;
     margin: 0 0 10px;
 }
 
 .cricket-portal p {
+    font-size: 0.98em;
     margin: 0;
 }
 
 .portal-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 24px;
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .portal-button {
     border-radius: 999px;
     display: inline-block;
     font-weight: bold;
-    padding: 12px 22px;
+    padding: 10px 16px;
+    text-align: center;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
