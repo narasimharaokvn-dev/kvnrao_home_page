@@ -46,6 +46,9 @@ header p {
     gap: 18px;
 }
 
+.crossword-portal { grid-column: 1 / -1; }
+.portal-button { box-sizing: border-box; }
+
 .hero-image-container {
     text-align: center;
 }

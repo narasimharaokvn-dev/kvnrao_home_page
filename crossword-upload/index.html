@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://api.github.com https://crossword.kvnrao.com; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Upload a Crossword | KVNRAO.COM</title>
+  <link rel="stylesheet" href="upload.css">
+  <script type="module" src="upload.js"></script>
+</head>
+<body>
+  <header><a href="/">KVNRAO.COM</a><span>Crossword KVN</span></header>
+  <main>
+    <p class="eyebrow">OWNER UPLOAD</p>
+    <h1>A new puzzle.<br>A link for your team.</h1>
+    <p class="intro">Choose your HTML file, upload it, then copy the sharing link.</p>
+    <form id="upload-form">
+      <fieldset id="controls">
+        <legend class="sr-only">Upload your crossword</legend>
+        <section class="step">
+          <h2><span>1</span> Choose your puzzle</h2>
+          <label for="folder">Puzzle folder</label>
+          <select id="folder">
+            <option value="1EEEXPORTED">1EEEXPORTED</option>
+            <option value="2AJEXPORTED">2AJEXPORTED</option>
+            <option value="3SAEXPORTED">3SAEXPORTED</option>
+            <option value="5HEXPORTED">5HEXPORTED</option>
+          </select>
+          <label for="puzzle">HTML file</label>
+          <input type="file" id="puzzle" accept=".html" required aria-describedby="file-help">
+          <p class="help" id="file-help">For example, 260913.html or 26-09-13.html. Up to 10 MB. Use a self-contained HTML file with its images embedded.</p>
+          <p id="selection" class="selection" aria-live="polite">No file selected.</p>
+          <label class="check"><input type="checkbox" id="latest" checked> Make this the latest puzzle</label>
+          <label class="check"><input type="checkbox" id="replace"> Replace an existing file with the same name</label>
+        </section>
+        <section class="step">
+          <h2><span>2</span> Owner access</h2>
+          <label for="access-key">Your GitHub upload key</label>
+          <input type="password" id="access-key" required autocomplete="off" spellcheck="false" placeholder="Paste your owner key" aria-describedby="key-help">
+          <p class="help" id="key-help">Enter your key each time you upload. It is sent only to GitHub and is never saved by this page.</p>
+          <details>
+            <summary>First time? Set up your upload key</summary>
+            <ol>
+              <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">GitHub’s key setup</a> and sign in as <strong>narasimharaokvn-dev</strong>.</li>
+              <li>Name it <strong>Crossword Upload</strong> and choose an expiry date.</li>
+              <li>Under <strong>Repository access</strong>, select <strong>Only select repositories</strong>, then <strong>KVN-Telugu-Crossword</strong>.</li>
+              <li>Under repository permissions, give <strong>Contents: Read and write</strong>. Leave other permissions unchanged.</li>
+              <li>Generate the key, keep it in your password manager, and paste it above. Do not send it to team members.</li>
+            </ol>
+          </details>
+        </section>
+        <button id="upload" type="submit">Upload &amp; get link</button>
+        <p class="help">Your puzzle will be public on crossword.kvnrao.com.</p>
+      </fieldset>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="result" hidden>
+      <p class="eyebrow">YOUR PUZZLE LINK</p>
+      <h2 id="result-title">Uploaded — publishing now</h2>
+      <p id="publish-status">Checking that your puzzle is available to your team…</p>
+      <label for="share-link">Sharing link</label>
+      <input id="share-link" readonly>
+      <div class="actions">
+        <button type="button" id="copy" disabled>Copy link</button>
+        <a id="open" target="_blank" rel="noopener noreferrer">Open puzzle</a>
+        <button type="button" id="check">Check again</button>
+      </div>
+      <p id="copy-status" role="status"></p>
+      <p class="help">The dated link always opens this file. <a href="https://crossword.kvnrao.com/latest.html" target="_blank" rel="noopener noreferrer">Latest Puzzle</a> opens whichever puzzle you last marked as latest.</p>
+      <a href="https://github.com/narasimharaokvn-dev/KVN-Telugu-Crossword/actions" target="_blank" rel="noopener noreferrer">View publishing progress</a>
+    </section>
+    <noscript>Enable JavaScript to upload a puzzle.</noscript>
+  </main>
+  <footer>KVNRAO.COM · Telugu Crossword</footer>
+</body>
+</html>
