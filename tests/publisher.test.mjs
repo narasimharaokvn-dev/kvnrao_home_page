@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {publishPuzzle, validateFile, isLive, PUBLIC} from '../crossword-upload/publisher.mjs';
-const input = {name:'260913.html',content:'<!doctype html><html><body>తెలుగు పదకేళి</body></html>',folder:'1EEEXPORTED',token:'test-key',latest:true};
+const input = {name:'260913.html',content:'<!doctype html><html><body>తెలుగు పదకేళి</body></html>',folder:'1EEEXPORTED',token:'test-key',latest:true,convert:false};
 function mockApi({exists=false,conflict=false,auth=false,uncertain=false}={}) {
   const calls=[];
   const fetcher=async (url, options) => {

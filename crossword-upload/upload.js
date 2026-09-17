@@ -1,4 +1,4 @@
-import {validateFile, publishPuzzle, isLive} from './publisher.mjs';
+import {validateFile, publishPuzzle, isLive} from './publisher.mjs?v=20260917';
 
 const $ = id => document.getElementById(id);
 let published;
@@ -14,7 +14,9 @@ function resetResult() {
   published = undefined;
   $('result').hidden = true;
   $('copy').disabled = true;
+  $('copy-html').disabled = true;
   $('open').removeAttribute('href');
+  $('open-html').removeAttribute('href');
   $('copy-status').textContent = '';
   showStatus('');
 }
@@ -37,9 +39,12 @@ async function checkPublished(attempts) {
     if (run !== generation) return;
     if (ready) {
       $('result-title').textContent = 'Your puzzle is ready to share';
-      $('publish-status').textContent = 'The uploaded file is live. Copy this link and send it to your team.';
+      $('publish-status').textContent = current.appUrl ? 'Both versions are live. Copy the app link for the newer version, or the HTML link for the original.' : 'The uploaded HTML is live. Copy this link and send it to your team.';
+      showStatus('Published successfully. Your sharing links are ready.');
       $('copy').disabled = false;
-      $('open').href = current.url;
+      $('copy-html').disabled = false;
+      $('open').href = current.appUrl || current.url;
+      $('open-html').href = current.url;
       $('check').disabled = false;
       return;
     }
@@ -72,10 +77,14 @@ $('upload-form').addEventListener('submit', async event => {
       return value && !/^(https?:|data:|\/\/|#)/i.test(value);
     });
     if (localAssets) throw new Error('This HTML refers to separate local files. Export a self-contained HTML with embedded images before uploading.');
-    showStatus('Saving your puzzle…');
-    published = await publishPuzzle({name: file.name, content, folder: $('folder').value, token, replace: $('replace').checked, latest: $('latest').checked});
+    showStatus($('convert').checked ? 'Converting and saving both versions together…' : 'Saving your HTML puzzle…');
+    published = await publishPuzzle({name: file.name, content, folder: $('folder').value, token, replace: $('replace').checked, latest: $('latest').checked,convert:$('convert').checked});
     showStatus('Upload saved. Checking publication…');
-    $('share-link').value = published.url;
+    $('share-link').value = published.appUrl || published.url;
+    $('share-label').textContent = published.appUrl ? 'Latest app — this Sunday’s puzzle' : 'Original HTML puzzle';
+    $('copy').textContent = published.appUrl ? 'Copy app link' : 'Copy HTML link';
+    $('html-link').value = published.url;
+    $('html-result').hidden = !published.appUrl;
     $('result-title').textContent = 'Uploaded — publishing now';
     $('publish-status').textContent = 'Checking that your puzzle is available to your team…';
     $('result').hidden = false;
@@ -85,18 +94,20 @@ $('upload-form').addEventListener('submit', async event => {
   } finally {
     token = '';
     $('controls').disabled = false;
-    $('upload').textContent = 'Upload & get link';
+    $('upload').textContent = 'Upload & get links';
   }
 });
 
 $('check').addEventListener('click', () => { void checkPublished(1); });
-$('copy').addEventListener('click', async () => {
+async function copyLink(id) {
   try {
-    await navigator.clipboard.writeText($('share-link').value);
+    await navigator.clipboard.writeText($(id).value);
     $('copy-status').textContent = 'Link copied. Paste it into your message to the team.';
   } catch {
-    $('share-link').focus();
-    $('share-link').select();
+    $(id).focus();
+    $(id).select();
     $('copy-status').textContent = 'Select and copy the link above.';
   }
-});
+}
+$('copy').addEventListener('click', () => copyLink('share-link'));
+$('copy-html').addEventListener('click', () => copyLink('html-link'));
