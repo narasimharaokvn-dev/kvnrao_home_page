@@ -55,3 +55,9 @@ footer p { margin: 3px; }
   .rate-card { min-height: 145px; padding: 14px; }
   .rate-card h3 { font-size: 1rem; }
 }
+
+
+.bullion-widget { max-width: 560px; margin: 0 auto; padding: 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.bullion-widget iframe { max-width: 100%; }
+.widget-credit { margin: 7px 0 0; text-align: center; font: 12px/1.4 system-ui, sans-serif; }
+.widget-credit a { color: #7a3500; }
